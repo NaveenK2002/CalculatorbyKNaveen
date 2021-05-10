@@ -12,35 +12,12 @@ private const val STATE_OPERAND1 = "Operand1"
 private const val STATE_OPERAND1_STORED = "Operand1_Stored"
 
 class MainActivity : AppCompatActivity() {
-//    private lateinit var result: EditText
-//    private lateinit var newNumber: EditText
-//    private val displayOperation by lazy(LazyThreadSafetyMode.NONE) { findViewById<TextView>(R.id.operation) }
 
     private var operand1: Double? = null
     private var pendingOperation = "="
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        result = findViewById(R.id.result)
-//        newNumber = findViewById(R.id.newNumber)
-//
-//        val button0: Button = findViewById(R.id.button0)
-//        val button1: Button = findViewById(R.id.button1)
-//        val button2: Button = findViewById(R.id.button2)
-//        val button3: Button = findViewById(R.id.button3)
-//        val button4: Button = findViewById(R.id.button4)
-//        val button5: Button = findViewById(R.id.button5)
-//        val button6: Button = findViewById(R.id.button6)
-//        val button7: Button = findViewById(R.id.button7)
-//        val button8: Button = findViewById(R.id.button8)
-//        val button9: Button = findViewById(R.id.button9)
-//
-//        val buttonDot: Button = findViewById(R.id.buttonDot)
-//        val buttonPlus: Button = findViewById(R.id.buttonPlus)
-//        val buttonMinus: Button = findViewById(R.id.buttonMinus)
-//        val buttonEquals: Button = findViewById(R.id.buttonEquals)
-//        val buttonDivide: Button = findViewById(R.id.buttonDivide)
-//        val buttonMultiple: Button = findViewById(R.id.buttonMultiply)
 
         val listener = View.OnClickListener { v ->
             val b = v as Button
@@ -76,10 +53,12 @@ class MainActivity : AppCompatActivity() {
         buttonDivide.setOnClickListener(opListener)
         buttonPlus.setOnClickListener(opListener)
         buttonMultiply.setOnClickListener(opListener)
+
         buttonC.setOnClickListener { view ->
             newNumber.setText("")
             result.setText("")
             operation.setText("")
+            operand1 = null
         }
         buttonNeg.setOnClickListener { view ->
             val value = newNumber.text.toString()
