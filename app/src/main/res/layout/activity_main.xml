@@ -10,8 +10,12 @@
 
     <Button
         android:id="@+id/buttonBackspace"
-        android:layout_width="74dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="monospace"
         android:minWidth="0dip"
@@ -28,8 +32,12 @@
 
     <Button
         android:id="@+id/buttonEquals"
-        android:layout_width="155dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="monospace"
         android:minWidth="0dip"
