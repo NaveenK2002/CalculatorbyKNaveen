@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 private const val STATE_PENDING_OPERATION = "PendingOperation"
 private const val STATE_OPERAND1 = "Operand1"
-private const val STATE_OPERAND1_STORED = "Operand1_Stored"
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +21,22 @@ class MainActivity : AppCompatActivity() {
         val listener = View.OnClickListener { v ->
             val b = v as Button
             newNumber.append(b.text)
+        }
+        buttonBackspace.setOnClickListener{ v ->
+            if(newNumber.text.toString().length>0) {
+                var tempStr = newNumber.text.toString()
+                tempStr = tempStr.substring(0,tempStr.length-1)
+                if(tempStr.isNotEmpty())
+                {
+                    var tempInt = tempStr.length
+                    if(tempStr[tempInt-1] == '.')
+                        tempStr = tempStr.substring(0,tempStr.length-1)
+                }
+                newNumber.setText(tempStr.toString())
+            }
+            else {
+                println("Nothing to delete")
+            }
         }
         button0.setOnClickListener(listener)
         button1.setOnClickListener(listener)
